@@ -1,10 +1,16 @@
+import React from 'react';
 import './App.css';
+import whiskey from "./images/whiskey.jpg";
+import tubby from "./images/tubby.jpg";
+import duke from "./images/duke.jpg";
+import perry from "./images/perry.jpg";
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <h1>Pet Matcher</h1>
+        <Dog dogs={App.defaultProps} />
       </header>
     </div>
   );
