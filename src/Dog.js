@@ -1,14 +1,15 @@
 import React from 'react';
-import './Dog.css'
+import { Link, Redirect } from "react-router-dom";
+// import './Dog.css'
 
 
-const Dog = (dogs) => {
+const Dog = ({dog}) => {
 
     return (
       <div>
         <div>
-          <h3>dogs.name</h3>
-          <img src=dog.src></img>
+          <h3>dog.name</h3>
+          <img src={dog.src} alt={dog.name} />
         </div>
       </div>
     );

@@ -1,23 +1,26 @@
 import React from 'react';
+import { BrowserRouter } from "react-router-dom";
+import Routes from "./Routes";
 import './App.css';
 import whiskey from "./images/whiskey.jpg";
 import tubby from "./images/tubby.jpg";
 import duke from "./images/duke.jpg";
 import perry from "./images/perry.jpg";
+import Dog from './Dog'
 
-function App() {
+function App({doglist}) {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Pet Matcher</h1>
-        <Dog dogs={App.defaultProps} />
-      </header>
+    <div>
+      <BrowserRouter>
+        <div className="container">
+          <Routes dogs={doglist} />
+        </div>
+      </BrowserRouter>
     </div>
   );
 }
 
-App.defaultProps = {
-  dogs: [
+export const doglist = [
     {
       name: "Whiskey",
       age: 5,
@@ -57,8 +60,9 @@ App.defaultProps = {
         "Tubby does not like walks.",
         "Angelina used to hate Tubby, but claims not to anymore.",
       ],
-    },
-  ],
-};
+    }
+  ]
+
+App.defaultProps = { doglist }
 
 export default App;
