@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 
-function ShowDogs({doglist}) {
+function ShowDogs({dogs}) {
     return (
       <div>
         {doglist.map((dog) => (

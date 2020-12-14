@@ -1,6 +1,7 @@
 import React from 'react';
 import { BrowserRouter } from "react-router-dom";
 import Routes from "./Routes";
+import NavBar from './NavBar'
 import './App.css';
 import whiskey from "./images/whiskey.jpg";
 import tubby from "./images/tubby.jpg";
@@ -8,19 +9,20 @@ import duke from "./images/duke.jpg";
 import perry from "./images/perry.jpg";
 import Dog from './Dog'
 
-function App({doglist}) {
+function App({ dogs }) {
   return (
     <div>
       <BrowserRouter>
+        <NavBar dogs={dogs} />
         <div className="container">
-          <Routes dogs={doglist} />
+          <Routes dogs={dogs} />
         </div>
       </BrowserRouter>
     </div>
   );
 }
 
-export const doglist = [
+export const dogs = [
     {
       name: "Whiskey",
       age: 5,
@@ -63,6 +65,6 @@ export const doglist = [
     }
   ]
 
-App.defaultProps = { doglist }
+App.defaultProps = { dogs }
 
 export default App;
